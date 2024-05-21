@@ -1,11 +1,41 @@
-.key {
-    display: inline-block;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    margin: 5px;
+    background-color: #f0f0f0;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 2px;
     background-color: lightgray;
     border: 1px solid #000;
     text-align: center;
-    border-radius: 4px; /* Smooth corners */
+    border-radius: 8px; /* Rounded corners */
+    user-select: none; /* Prevent text selection */
+    transition: background-color 0.3s, border-color 0.3s;
+    box-sizing: border-box;
+    width: 40px;
+}
+
+.key.function-key {
+    width: 50px;
 }
 
 .key.wide {
@@ -13,7 +43,7 @@
 }
 
 .key.extra-wide {
-    width: 120px;
+    width: 100px;
 }
 
 .key.space {

@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const keys = document.querySelectorAll('.key');
     const startTestButton = document.getElementById('startTestButton');
@@ -28,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.onended = async () => {
         speakerTestResult.textContent = 'Speaker Test: Completed';
   
-        // Introduce a delay of 2 seconds before starting the other tests
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Introduce a delay of 1 seconds before starting the other tests
+        await new Promise(resolve => setTimeout(resolve, 1000));
   
         // Camera Test
         const video = document.getElementById('cameraTest');
