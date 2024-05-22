@@ -9,6 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+    window.addEventListener('keydown', (event) => {
+      // List of keys to ignore their default actions
+      const ignKeys = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Enter' , 'Tab', 'ArrowLeft','ArrowUp', 'ArrowDown', 'ArrowRight', 'AltLeft' ,'Space', 'AltRight' ];
+  
+      // Check if the pressed is key
+      if (ignKeys.includes(event.key)) {
+        event.preventDefault(); // Prevent default action of function keys
+      }
+  
+      // Highlight the corresponding key
+      keys.forEach(key => {
+        if (key.dataset.key === event.code) {
+          key.classList.add('active');
+        }
+      });
+    });
   
     const resetKeys = () => {
       keys.forEach(key => {
